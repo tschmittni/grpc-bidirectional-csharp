@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+package tunnel;
+
+service TunnelMessaging {
+  rpc SendData (stream TunnelMessage) returns (stream TunnelMessage) {}
+}
+ 
+message TunnelMessage {
+  string name = 1;
+  string message = 2;
+}
